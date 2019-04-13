@@ -17,18 +17,6 @@
             "responsible": "Joseph",
             "description": "lorem ipsum 3",
             "priority":"high"
-        },
-        {
-            "title": "Task 4",
-            "responsible": "Jenny",
-            "description": "lorem ipsum 4",
-            "priority":"medium"
-        },
-        {
-            "title": "Task 5",
-            "responsible": "Frank",
-            "description": "lorem ipsum 5",
-            "priority":"medium"
         }
     ]
 }

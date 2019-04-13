@@ -13,8 +13,14 @@ class App extends Component {
     this.state = {
         todos
     }
+    this.handleAddTodo = this.handleAddTodo.bind(this);
   }
 
+  handleAddTodo(todo) {
+    this.setState({
+        todos: [...this.state.todos,todo]
+    })
+  }
 
   render() {
     
@@ -70,7 +76,7 @@ class App extends Component {
             Learn React
           </a>          
           */}
-          <TodoForm></TodoForm>
+          <TodoForm onAddTodo={this.handleAddTodo}/>
         </header>
 
       </div>
