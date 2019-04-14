@@ -22,13 +22,22 @@ class App extends Component {
     })
   }
 
+  removeTodo(index){
+    console.log(index);
+    this.setState({
+        todos: this.state.todos.filter((e,i) => {
+            return i !== index
+        })
+    });
+  }
+
   render() {
     
     const todos = this.state.todos.map((todo,i) => {
         return(
             <div className="col-md-4">
                 <div className="card mt-4">                
-                    <div className="card-header">
+                    <div className="card-title text-center">
                         <h3>{todo.title}</h3>
                         <span className="badge badge-pill badge-danger ml-2">
                             {todo.priority}
@@ -37,7 +46,15 @@ class App extends Component {
                     <div className="card-body">
                         <p>{todo.description}</p>
                         <p><mark>{todo.responsible}</mark></p>
-                    </div>                 
+                    </div> 
+                    <div className="card-footer">                
+                        <button
+                            className="btn btn-danger"
+                            onClick={this.removeTodo.bind(this,i)}
+                        >
+                        Borrar
+                        </button>
+                    </div>
                 </div>
             </div>
         )
